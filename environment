@@ -1,0 +1,29 @@
+# MySQL 配置
+#export MYSQL_HOST=
+#export MYSQL_PORT=
+export MYSQL_HOST=
+export MYSQL_PORT=
+
+#export MYSQL_USER=
+#export MYSQL_PASSWORD=
+export MYSQL_USER=root
+export MYSQL_PASSWORD=
+
+# export ENV_PROFILE='dev'
+export ENV_PROFILE='prod'
+
+export MYSQL_DB=
+
+# Milvus 配置
+export MILVUS_HOST=
+export MILVUS_PORT=
+export MILVUS_COLLECTION_NAME=test
+
+# 模型地址
+export BERT_BASE_MODEL=/home/aiuser/text2vec-base-chinese
+# export CHAT_MODEL=/home/aiuser/yhd-workspace/models/Llama2-Chinese-7b-Chat
+export CHAT_MODEL=/home/aiuser/yhd-workspace/projects/chatglm2-6b
+# export CHAT_MODEL=/home/aiuser/Baichuan2-7B-Chat
+
+# CUDA启动
+export CUDA_LAUNCH_BLOCKING=1
