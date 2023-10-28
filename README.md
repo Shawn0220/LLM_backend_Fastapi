@@ -1,21 +1,17 @@
 # LLM-Chat-Backend
 
-LLM-Chat后端服务
+## User-side operations 
+apps\chat\router.py
 
-# docker 部署
+## administrators operations
+apps\chat\admin_router.py.
 
-```
-docker build -t reg.hdec.com/pdc/tianji-backend:v1 .
-docker push reg.hdec.com/pdc/tianji-backend:v1
-```
+The streaming output of the LLMs is implemented through WebSockets in __llm_loader.py__ and __llm_task.py__. 
+The logic for loading the knowledge base and historical Q&A is implemented in __llm_handlers.py__. The data structures are defined in schemas.py, and the database operations are defined in __crud.py__.
 
-在aiuser机器上编译, Jenkins上报了奇怪的错误,可能有各种原因
-此次基础镜像是重新编译的，python版本，cuda版本都比较新，也是在aiuser机器上编译的
-
-## 环境变量
-
-source environment
-
-## 启动命令
-
-python -m uvicorn main:app --port=8002 --host=0.0.0.0 --reload
+## To run the application locally, follow these steps:
+1. Modify the configuration in the environment file, including the model and MySQL database connection.
+2. Run the command "source environment" to read the environment variables.
+3. Use pip to install the required external libraries by running "pip install requirements".
+4. Start the application by running "python -m uvicorn main:app --port=8002 --host=0.0.0.0 --reload".
+5. Afterward, you can access the relevant interfaces, and you can find examples of the interfaces at localhost:8002/doc#.
